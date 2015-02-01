@@ -1,0 +1,5 @@
+D:\code\asp.net\ecommerce\ecommerce\bin\ecommerce.dll
+D:\code\asp.net\ecommerce\ecommerce\bin\ecommerce.pdb
+D:\code\asp.net\ecommerce\ecommerce\obj\Debug\ResolveAssemblyReference.cache
+D:\code\asp.net\ecommerce\ecommerce\obj\Debug\ecommerce.dll
+D:\code\asp.net\ecommerce\ecommerce\obj\Debug\ecommerce.pdb
