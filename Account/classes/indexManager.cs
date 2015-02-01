@@ -33,10 +33,25 @@ namespace ecommerce.Account.classes
             return data;
         }
 
-        public SqlDataReader getproduct()
+        public SqlDataReader getproduct(string id=null)
         {
             connection.Open();
-            SqlCommand cmd = new SqlCommand("select * from tbl_product", connection);
+            string sql = null;
+            if (!string.IsNullOrEmpty(id))
+            {
+                sql = "select * from tbl_product where id=@id";
+
+            }
+            else
+            {
+                sql = "select * from tbl_product";
+            }
+            SqlCommand cmd = new SqlCommand(sql, connection);
+            if (!string.IsNullOrEmpty(id))
+            {
+                cmd.Parameters.Add(new SqlParameter("id", id));
+            }
+            
             SqlDataReader data = cmd.ExecuteReader();
             return data;
         }
