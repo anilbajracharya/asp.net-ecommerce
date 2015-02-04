@@ -23,14 +23,14 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                    <button class="btn btn-sm btn-success" type="button">Add</button>
+                    <a class="btn btn-sm btn-success" href="edit.aspx" type="button">Add</a>
                         <h2>Bordered Table</h2>
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th>Image</th>
-                                        <th>Title</th>
+                              a          <th>Title</th>
                                         <th>Stock</th>
                                         <th>Price</th>
                                         <th>Edit</th>

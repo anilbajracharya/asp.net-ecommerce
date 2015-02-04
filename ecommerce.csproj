@@ -65,6 +65,7 @@
     <Content Include="admin\css\sb-admin.css" />
     <Content Include="admin\dashboard.aspx" />
     <Content Include="admin\default.aspx" />
+    <Content Include="admin\delete.aspx" />
     <Content Include="admin\edit.aspx" />
     <Content Include="admin\font-awesome\css\font-awesome.css" />
     <Content Include="admin\font-awesome\css\font-awesome.min.css" />
@@ -290,6 +291,13 @@
     </Compile>
     <Compile Include="admin\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\delete.aspx.cs">
+      <DependentUpon>delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\delete.aspx.designer.cs">
+      <DependentUpon>delete.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\edit.aspx.cs">
       <DependentUpon>edit.aspx</DependentUpon>
