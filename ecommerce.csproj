@@ -248,6 +248,7 @@
     </Compile>
     <Compile Include="Account\classes\connectionManager.cs" />
     <Compile Include="Account\classes\indexManager.cs" />
+    <Compile Include="Account\classes\ProductManager.cs" />
     <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -9,10 +9,61 @@ namespace ecommerce.Account.classes
     public class ProductManager
     {
 
-        public Boolean editProduct(string title,string img,string desc,decimal price,int stock)
+          public SqlConnection connection;
+          public ProductManager()
         {
-            return false;
+            connectionManager varCons = new connectionManager();
+            SqlConnection cons = varCons.getConnection();
+            this.connection = cons;
+            
         }
 
+        public string editProduct(string id,string title,string img,string desc,string price,string stock)
+        {
+            string result = null;
+            connection.Open();
+            if (!string.IsNullOrEmpty(id))
+            {
+               
+            }
+            try
+            {
+                string query = "Update tbl_product set title=@title,description=@desc,img=@img,stock=@stock where id=@id";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.Add(new SqlParameter("id", id));
+                command.Parameters.Add(new SqlParameter("title", title));
+                command.Parameters.Add(new SqlParameter("img", img));
+                command.Parameters.Add(new SqlParameter("stock", stock));
+                command.Parameters.Add(new SqlParameter("desc", desc));
+                command.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                result = ex.ToString();
+            }
+            
+            return result;
+        }
+        public string addProduct(string title, string img, string desc, string price, string stock)
+        {
+            string result; 
+                try
+                {
+                    string query = "INSERT into tbl_product(title,description,img,stock)VALUES(@title,@desc,@img,@stock)";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.Add(new SqlParameter("title", title));
+                    command.Parameters.Add(new SqlParameter("img", img));
+                    command.Parameters.Add(new SqlParameter("stock", stock));
+                    command.Parameters.Add(new SqlParameter("desc", desc));
+                    command.ExecuteNonQuery();
+                    result = "Sucess";              
+                }
+                catch (Exception ex)
+                {
+                    result = ex.ToString();
+                }
+            
+            return result;
+        }
     }
 }

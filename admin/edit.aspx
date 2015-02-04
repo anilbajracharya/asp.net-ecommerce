@@ -22,119 +22,44 @@
                     </div>
                 </div>
 
-                <form role="form">
-
+                
                             <div class="form-group">
                                 <label>Name</label>
                                 
                                 <asp:TextBox ID="txtname" class="form-control" name="txtname" runat="server"></asp:TextBox>
-                                <p class="help-block">Name of product</p>
+                                
+                                    <asp:Literal ID="errortitle"  runat="server"></asp:Literal>
                             </div>
 
                             <div class="form-group">
-                                <label>Text Input with Placeholder</label>
-                                <input placeholder="Enter text" class="form-control">
+                                <label>Description</label>
+                               <asp:TextBox class="form-control"
+                               
+                                    ID="desc" name="desc" runat="server"></asp:TextBox>
+                                       <asp:Literal ID="errordesc" runat="server"></asp:Literal>
                             </div>
 
-                            <div class="form-group">
-                                <label>Static Control</label>
-                                <p class="form-control-static">email@example.com</p>
+
+                              <div class="form-group">
+                                <label>price</label>
+                               <asp:TextBox class="form-control"
+                               
+                                    ID="price" name="price" runat="server"></asp:TextBox>
+                                    <asp:Literal ID="errorprice"   runat="server"></asp:Literal>
                             </div>
 
-                            <div class="form-group">
-                                <label>File input</label>
-                                <input type="file">
+                              <div class="form-group">
+                                <label>Stock</label>
+                               <asp:TextBox 
+                               class="form-control"
+                                    ID="stock" name="stock" runat="server"></asp:TextBox>
+                                    <asp:Literal ID="errorstock"   runat="server"></asp:Literal>
                             </div>
 
-                            <div class="form-group">
-                                <label>Text area</label>
-                                <textarea rows="3" class="form-control"></textarea>
-                            </div>
 
-                            <div class="form-group">
-                                <label>Checkboxes</label>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">Checkbox 1
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">Checkbox 2
-                                    </label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="">Checkbox 3
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Inline Checkboxes</label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">1
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">2
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox">3
-                                </label>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Radio Buttons</label>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios">Radio 1
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios">Radio 2
-                                    </label>
-                                </div>
-                                <div class="radio">
-                                    <label>
-                                        <input type="radio" value="option3" id="optionsRadios3" name="optionsRadios">Radio 3
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Inline Radio Buttons</label>
-                                <label class="radio-inline">
-                                    <input type="radio" checked="" value="option1" id="optionsRadiosInline1" name="optionsRadiosInline">1
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" value="option2" id="optionsRadiosInline2" name="optionsRadiosInline">2
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" value="option3" id="optionsRadiosInline3" name="optionsRadiosInline">3
-                                </label>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Selects</label>
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Multiple Selects</label>
-                                <select class="form-control" multiple="">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                              <div class="form-group">
+                                <label><asp:Image ID="img" name="img" runat="server" /></label>
+                                <asp:FileUpload ID="imgUpolad" name="imgUpolad" runat="server" />
                             </div>
 
                 <asp:Button ID="save" class="btn btn-default" runat="server" Text="Save" 
@@ -144,5 +69,5 @@
 
                             <button class="btn btn-default" type="reset">Reset Button</button>
 
-                        </form>
+                      
 </asp:Content>
