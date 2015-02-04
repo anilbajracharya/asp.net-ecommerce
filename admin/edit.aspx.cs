@@ -38,30 +38,31 @@ namespace ecommerce.admin
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            string id = Request.QueryString["id"];
-            if (!string.IsNullOrEmpty(id))
+            if (!IsPostBack)
             {
-                indexManager index = new indexManager();
-
-                this.data = index.getproduct(id);
-
-                connectionManager baseurl = new connectionManager();
-                url = baseurl.getbasurl("image/product/");
-
-
-                while (data.Read())
+                string id = Request.QueryString["id"];
+                if (!string.IsNullOrEmpty(id))
                 {
-                    txtname.Text = data[data.GetOrdinal("title")].ToString();
-                    desc.Text = data[data.GetOrdinal("description")].ToString();
-                    img.ImageUrl = url + data[data.GetOrdinal("img")].ToString();
+                    indexManager index = new indexManager();
 
-                    price.Text = data[data.GetOrdinal("price")].ToString();
-                    stock.Text = data[data.GetOrdinal("stock")].ToString();
+                    this.data = index.getproduct(id);
 
+                    connectionManager baseurl = new connectionManager();
+                    url = baseurl.getbasurl("image/product/");
+
+
+                    while (data.Read())
+                    {
+                        txtname.Text = data[data.GetOrdinal("title")].ToString();
+                        desc.Text = data[data.GetOrdinal("description")].ToString();
+                        img.ImageUrl = url + data[data.GetOrdinal("img")].ToString();
+
+                        price.Text = data[data.GetOrdinal("price")].ToString();
+                        stock.Text = data[data.GetOrdinal("stock")].ToString();
+
+                    }
                 }
             }
-
         }
 
         protected void save_Click(object sender, EventArgs e)
@@ -138,7 +139,7 @@ namespace ecommerce.admin
 
 
         
-            if (!error)
+            if (error)
             {
                 return;
             }
