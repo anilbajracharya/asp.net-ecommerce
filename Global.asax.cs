@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Web.Routing;
+
 
 namespace ecommerce
 {
@@ -12,6 +14,7 @@ namespace ecommerce
 
         void Application_Start(object sender, EventArgs e)
         {
+            RegisterRoutes(RouteTable.Routes);
             // Code that runs on application startup
 
         }
@@ -41,6 +44,13 @@ namespace ecommerce
             // is set to InProc in the Web.config file. If session mode is set to StateServer 
             // or SQLServer, the event is not raised.
 
+        }
+
+        public static void RegisterRoutes(System.Web.Routing.RouteCollection routes)
+        {
+            routes.MapPageRoute("",
+            "product/{id}/{*ids}",
+            "~/product.aspx");
         }
 
     }

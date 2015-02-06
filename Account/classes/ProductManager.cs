@@ -17,6 +17,29 @@ namespace ecommerce.Account.classes
             this.connection = cons;
             
         }
+          public SqlDataReader getproduct(int id =0 )
+          {
+              connection.Open();
+              string sql = null;
+              if (id!=0)
+              {
+                  sql = "select * from tbl_product where id=@id";
+
+              }
+              else
+              {
+                  sql = "select * from tbl_product";
+              }
+              SqlCommand cmd = new SqlCommand(sql, connection);
+              if (id != 0)
+              {
+                  cmd.Parameters.Add(new SqlParameter("id", id));
+              }
+              
+              SqlDataReader data = cmd.ExecuteReader();
+          
+              return data;
+          }
 
           public string deleteProduct(string id)
           {
@@ -24,7 +47,7 @@ namespace ecommerce.Account.classes
             string result;
             try
             {
-                string query = "DELETE  FROM tbl_product id=@id";
+                string query = "DELETE  FROM tbl_product where id=@id";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.Add(new SqlParameter("id", id));
                 command.ExecuteNonQuery();

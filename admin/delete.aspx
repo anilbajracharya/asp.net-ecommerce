@@ -8,7 +8,7 @@
     <div class="jumbotron">
                     <p>Are you sure you want to delete this</p>
                     <p><asp:Button ID="delete"  class="btn btn-lg btn-danger" runat="server" 
-                            Text="Button" onclick="delete_Click" />
+                            Text="Yes" onclick="delete_Click" />
 
         <asp:HiddenField ID="deleteproduct"   runat="server" />
                     <button class="btn btn-lg btn-default" type="button">No</button>

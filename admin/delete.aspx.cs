@@ -47,9 +47,16 @@ namespace ecommerce.admin
         {
             ProductManager delete = new ProductManager();
             string id = Request.QueryString["id"];
-            if (delete.deleteProduct(id) == "sucess")
+            string result=delete.deleteProduct(id);
+            if (result == "sucess")
             {
-
+                Response.Redirect("product-manager.aspx?sucess=delete");
+                Response.End();
+            }
+            else
+            {
+                Response.Write("no=" + result);
+                
             }
         }
     }
